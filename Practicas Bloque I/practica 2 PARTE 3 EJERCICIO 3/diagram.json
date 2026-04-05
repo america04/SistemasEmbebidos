@@ -1,0 +1,63 @@
+{
+  "version": 1,
+  "author": "Anonymous maker",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 0.6, "left": -0.6, "attrs": {} },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": -80.2,
+      "left": 86.4,
+      "attrs": { "color": "red", "xray": "1" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn2",
+      "top": -80.2,
+      "left": 211.2,
+      "attrs": { "color": "red", "xray": "1" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led2",
+      "top": -32.4,
+      "left": -197.8,
+      "attrs": { "color": "green" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": -61.2,
+      "left": -92.2,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 32.75,
+      "left": -172.8,
+      "attrs": { "value": "220" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r2",
+      "top": 3.95,
+      "left": -67.2,
+      "attrs": { "value": "220" }
+    }
+  ],
+  "connections": [
+    [ "btn2:2.r", "uno:2", "green", [ "h9.8", "v38.6", "h-48" ] ],
+    [ "btn2:1.l", "uno:GND.1", "green", [ "h-28.8", "v57.6", "h-67.2", "v9.6" ] ],
+    [ "btn1:2.r", "uno:3", "gold", [ "h48.2", "v38.6", "h19.2" ] ],
+    [ "btn1:1.l", "uno:GND.1", "gold", [ "h-19.2", "v48", "h48", "v19.2" ] ],
+    [ "uno:8", "r2:2", "red", [ "v-37.8", "h-0.2" ] ],
+    [ "led1:A", "r2:1", "red", [ "v0" ] ],
+    [ "uno:GND.3", "led1:C", "red", [ "v38.9", "h-236.6" ] ],
+    [ "uno:9", "r1:2", "black", [ "v0" ] ],
+    [ "led2:A", "r1:1", "black", [ "v0" ] ],
+    [ "led2:C", "uno:GND.2", "black", [ "v230.4", "h355.6" ] ]
+  ],
+  "dependencies": {}
+}
