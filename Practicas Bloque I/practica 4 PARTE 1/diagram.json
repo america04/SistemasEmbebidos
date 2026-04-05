@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "author": "Castro Márquez Cristian",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-breadboard-half", "id": "bb1", "top": -51, "left": -6.8, "attrs": {} },
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 163.8, "left": 18.6, "attrs": {} },
+    { "type": "wokwi-led", "id": "led1", "top": -32.4, "left": 71, "attrs": { "color": "red" } },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 62.4,
+      "left": 66.65,
+      "rotate": 90,
+      "attrs": { "value": "220" }
+    },
+    { "type": "wokwi-potentiometer", "id": "pot1", "top": -68.5, "left": 211, "attrs": {} },
+    {
+      "type": "wokwi-photoresistor-sensor",
+      "id": "ldr1",
+      "top": -16,
+      "left": -287.2,
+      "attrs": {}
+    }
+  ],
+  "connections": [
+    [ "uno:A0", "pot1:SIG", "green", [ "v19.1", "h90.2", "v-326.4", "h-76.8" ] ],
+    [ "bb1:9b.j", "uno:9", "red", [ "v9.6", "h86.4" ] ],
+    [ "uno:GND.1", "bb1:bn.10", "black", [ "v0" ] ],
+    [ "bb1:bn.6", "bb1:8t.e", "black", [ "v0" ] ],
+    [ "ldr1:GND", "bb1:bn.1", "black", [ "h0" ] ],
+    [ "uno:3.3V", "bb1:bp.25", "red", [ "v28.7", "h157.8", "v-249.6" ] ],
+    [ "bb1:bp.22", "pot1:VCC", "red", [ "v-77.7", "h-8" ] ],
+    [ "pot1:GND", "bb1:bn.20", "black", [ "v0" ] ],
+    [ "pot1:GND", "bb1:24t.a", "", [ "$bb" ] ],
+    [ "pot1:SIG", "bb1:25t.a", "", [ "$bb" ] ],
+    [ "pot1:VCC", "bb1:26t.a", "", [ "$bb" ] ],
+    [ "led1:A", "bb1:9t.b", "", [ "$bb" ] ],
+    [ "led1:C", "bb1:8t.b", "", [ "$bb" ] ],
+    [ "r1:1", "bb1:9t.e", "", [ "$bb" ] ],
+    [ "r1:2", "bb1:9b.i", "", [ "$bb" ] ],
+    [ "ldr1:VCC", "bb1:bp.3", "red", [ "h0" ] ]
+  ],
+  "dependencies": {}
+}
